@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/title_Fragment">
+
+    <fragment
+        android:id="@+id/title_Fragment"
+        android:name="com.example.androidquiz.titleFragment.TitleFragment"
+        android:label="Title_Fragment" >
+        <action
+            android:id="@+id/action_title_Fragment_to_quiz_Fragment"
+            app:destination="@id/quiz_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/quiz_Fragment"
+        android:name="com.example.androidquiz.quizFragment.QuizFragment"
+        android:label="Quiz_Fragment" >
+        <action
+            android:id="@+id/action_quiz_Fragment_to_quizLostFragment"
+            app:destination="@id/quizLostFragment"
+            app:popUpTo="@id/quiz_Fragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_quiz_Fragment_to_quizWonFragment"
+            app:destination="@id/quizWonFragment"
+            app:popUpTo="@id/quiz_Fragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_quiz_Fragment_self"
+            app:destination="@id/quiz_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/quiz_Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizLostFragment"
+        android:name="com.example.androidquiz.quizLostFragment.QuizLostFragment"
+        android:label="QuizLostFragment" >
+        <action
+            android:id="@+id/action_quizLostFragment_to_title_Fragment"
+            app:destination="@id/title_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/title_Fragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizWonFragment"
+        android:name="com.example.androidquiz.quizWonFragment.QuizWonFragment"
+        android:label="QuizWonFragment" >
+        <action
+            android:id="@+id/action_quizWonFragment_to_title_Fragment"
+            app:destination="@id/title_Fragment"
+            app:popUpTo="@id/title_Fragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpToInclusive="false"/>
+    </fragment>
+</navigation>

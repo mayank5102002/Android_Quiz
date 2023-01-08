@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android Quiz</string>
+
+    <string name="question_number">Question Number : %1$d/%2$d</string>
+</resources>
